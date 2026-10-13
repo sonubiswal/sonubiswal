@@ -1,71 +1,60 @@
 <!--
-╔══════════════════════════════════════════════════════════════════════════════╗
-║   SUMIT KUMAR BISWAL  ·  GitHub Profile README                               ║
-║                                                                              ║
-║   Repo name must be exactly:  sonubiswal                                     ║
-║   File location: README.md at repo root                                      ║
-║                                                                              ║
-║   All widgets generate live from the username "sonubiswal".                  ║
-║   No API keys, no secrets, no setup.                                         ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+  GitHub Profile README — Sumit Kumar Biswal
+  Repo name must be exactly: sonubiswal   (README.md at repo root)
+
+  Files used by this README:
+    assets/header.svg                       animated 3D hero banner
+    assets/divider.svg                      animated section divider
+    .github/workflows/profile-3d.yml        generates the 3D contribution graph
+    .github/workflows/snake.yml             (already set up) contribution snake
 -->
 
-<!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+<div align="center">
+
+<img src="assets/header.svg" width="100%" alt="Sumit Kumar Biswal — AI & Automation Engineer in Training" />
+
+<a href="https://github.com/sonubiswal">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&pause=1200&color=38BDF8&center=true&vCenter=true&width=640&height=40&lines=Forecasting+%E2%80%A2+Geospatial+%E2%80%A2+Deep+Learning;Build+it.+Measure+it.+Beat+the+baseline.;From+ensembles+to+EV+routes+to+offline+RL" alt="Focus areas" />
+</a>
+
+<br/>
+
+<a href="https://github.com/sonubiswal?tab=followers"><img src="https://img.shields.io/github/followers/sonubiswal?label=Followers&style=for-the-badge&color=0ea5e9&labelColor=1e293b&logo=github&logoColor=white" alt="Followers" /></a>
+<a href="https://github.com/sonubiswal?tab=repositories"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fsonubiswal&query=%24.public_repos&label=Repos&color=6366f1&labelColor=1e293b&style=for-the-badge&logo=github&logoColor=white" alt="Repos" /></a>
+<img src="https://komarev.com/ghpvc/?username=sonubiswal&label=Profile%20Views&color=8b5cf6&style=for-the-badge&labelColor=1e293b" alt="Profile views" />
+<img src="https://img.shields.io/badge/Based%20in-India-22c55e?style=for-the-badge&labelColor=1e293b&logo=googlemaps&logoColor=white" alt="India" />
+<img src="https://img.shields.io/badge/Open%20to-Collaboration-f59e0b?style=for-the-badge&labelColor=1e293b&logo=handshake&logoColor=white" alt="Open to collaboration" />
+
+<br/><br/>
+
+<a href="#-about-me">About</a> &nbsp;•&nbsp;
+<a href="#-how-i-work">How I Work</a> &nbsp;•&nbsp;
+<a href="#-tech-arsenal">Tech</a> &nbsp;•&nbsp;
+<a href="#-featured-projects">Projects</a> &nbsp;•&nbsp;
+<a href="#-learning--coursework">Coursework</a> &nbsp;•&nbsp;
+<a href="#-github-analytics">Analytics</a> &nbsp;•&nbsp;
+<a href="#-lets-connect">Connect</a>
+
+</div>
+
+<img src="assets/divider.svg" width="100%" alt="" />
+
+<!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
+
+<h2 align="center">🧭 About Me</h2>
 
 <table>
 <tr>
 <td width="200" align="center" valign="middle">
 
 <a href="https://github.com/sonubiswal">
-  <img src="https://github.com/sonubiswal.png" width="170" style="border-radius: 50%; border: 4px solid #0ea5e9;" alt="Sumit Kumar Biswal" />
-</a>
-
-<br/>
-<br/>
-
-<a href="https://github.com/sonubiswal?tab=followers">
-  <img src="https://img.shields.io/github/followers/sonubiswal?label=Followers&style=flat-square&color=0ea5e9&labelColor=1e293b&logo=github&logoColor=white" alt="Followers" />
-</a>
-<a href="https://github.com/sonubiswal?tab=repositories">
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fsonubiswal&query=%24.public_repos&label=Repos&color=6366f1&labelColor=1e293b&style=flat-square&logo=github&logoColor=white" alt="Repos" />
+  <img src="https://github.com/sonubiswal.png?size=340" width="170" alt="Sumit Kumar Biswal" />
 </a>
 
 </td>
-<td valign="middle">
+<td valign="top">
 
-<h3>👋 Hi, I'm Sumit Kumar Biswal</h3>
-
-<p><strong>AI &amp; Automation Engineer in Training</strong><br/>
-<em>From multi-model weather forecasting to EV charging route finders — I build practical tools that solve real problems.</em></p>
-
-<a href="https://github.com/sonubiswal">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&pause=1200&color=38BDF8&vCenter=true&width=520&height=32&lines=Forecasting+%E2%80%A2+Geospatial+%E2%80%A2+Deep+Learning;Build+it.+Measure+it.+Beat+the+baseline." alt="Focus areas" />
-</a>
-
-<br/>
-<br/>
-
-<img src="https://komarev.com/ghpvc/?username=sonubiswal&label=Profile%20Views&color=8b5cf6&style=flat-square" alt="Profile views" />
-<img src="https://img.shields.io/badge/Based%20in-India-22c55e?style=flat-square&labelColor=1e293b&logo=googlemaps&logoColor=white" alt="India" />
-<img src="https://img.shields.io/badge/Open%20to-Collaboration-f59e0b?style=flat-square&labelColor=1e293b&logo=handshake&logoColor=white" alt="Open to collaboration" />
-
-</td>
-</tr>
-</table>
-
----
-
-<!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
-
-<h2 align="center">🧭 About Me</h2>
-
-<br/>
-
-<table>
-<tr>
-<td width="60%" valign="top">
-
-<p>I'm an engineer who learns by <strong>shipping</strong>. Rather than stopping at a notebook, I take ideas all the way to working products — desktop applications, interactive maps, and models that <strong>grade their own accuracy</strong>.</p>
+<p>I'm an engineer who learns by <strong>shipping</strong>. Rather than stopping at a notebook, I take ideas all the way to working products: desktop applications, interactive maps, and models that <strong>grade their own accuracy</strong>.</p>
 
 <p>My work sits at the intersection of <strong>applied machine learning</strong>, <strong>geospatial tooling</strong>, and <strong>clean software architecture</strong>. I care about the part most people skip: proving a system actually beats a baseline.</p>
 
@@ -74,39 +63,90 @@ class SumitKumarBiswal:
     role       = "AI &amp; Automation Engineer in Training"
     education  = ["CS50x", "CS50 AI",
                   "DeepLearning.AI Specialization"]
-    focus      = ["Forecast validation",
-                  "Applied ML",
-                  "Deep Learning",
-                  "Reinforcement Learning"]
+    focus      = ["Forecast validation", "Applied ML",
+                  "Deep Learning", "Reinforcement Learning"]
     philosophy = "Build it, measure it, prove it beats the baseline."
 </pre>
-
-</td>
-<td width="40%" valign="top" align="center">
-
-<br/>
-
-<img src="https://img.shields.io/badge/🎓-CS50x-0ea5e9?style=for-the-badge&labelColor=1e293b" alt="CS50x" />
-<br/>
-<img src="https://img.shields.io/badge/🤖-CS50%20AI-6366f1?style=for-the-badge&labelColor=1e293b" alt="CS50 AI" />
-<br/>
-<img src="https://img.shields.io/badge/🧠-DeepLearning.AI-8b5cf6?style=for-the-badge&labelColor=1e293b" alt="DeepLearning.AI" />
-<br/>
-<img src="https://img.shields.io/badge/💻-Python%20First-22c55e?style=for-the-badge&labelColor=1e293b" alt="Python" />
-<br/>
-<img src="https://img.shields.io/badge/📍-India-f59e0b?style=for-the-badge&labelColor=1e293b" alt="India" />
 
 </td>
 </tr>
 </table>
 
----
+<div align="center">
+
+<img src="https://img.shields.io/badge/🎓-CS50x-0ea5e9?style=for-the-badge&labelColor=1e293b" alt="CS50x" />
+<img src="https://img.shields.io/badge/🤖-CS50%20AI-6366f1?style=for-the-badge&labelColor=1e293b" alt="CS50 AI" />
+<img src="https://img.shields.io/badge/🧠-DeepLearning.AI-8b5cf6?style=for-the-badge&labelColor=1e293b" alt="DeepLearning.AI" />
+<img src="https://img.shields.io/badge/💻-Python%20First-22c55e?style=for-the-badge&labelColor=1e293b" alt="Python" />
+<img src="https://img.shields.io/badge/📍-India-f59e0b?style=for-the-badge&labelColor=1e293b" alt="India" />
+
+</div>
+
+<img src="assets/divider.svg" width="100%" alt="" />
+
+<!-- ══════════════════════════════ HOW I WORK ══════════════════════════════ -->
+
+<h2 align="center">🔁 How I Work</h2>
+
+<div align="center">
+
+```mermaid
+flowchart LR
+    A([💡 Real problem]) --> B[🛠️ Build a<br/>working version]
+    B --> C{{📏 Measure vs.<br/>a baseline}}
+    C -->|beats it| D([🚀 Ship + document])
+    C -->|doesn't| B
+
+    style A fill:#0ea5e9,color:#fff,stroke:none
+    style B fill:#6366f1,color:#fff,stroke:none
+    style C fill:#8b5cf6,color:#fff,stroke:none
+    style D fill:#22c55e,color:#fff,stroke:none
+```
+
+</div>
+
+<div align="center">
+
+```mermaid
+mindmap
+  root((Sumit))
+    Forecasting
+      Multi-model ensembles
+      Self-scoring accuracy
+      Persistence and IFS baselines
+    Geospatial
+      Geocoding
+      Road-network routing
+      Interactive maps
+    Machine Learning
+      CS50 AI
+      Deep Learning from scratch
+      Object detection
+    Reinforcement Learning
+      Offline RL
+      Groundwater audit
+```
+
+</div>
+
+<img src="assets/divider.svg" width="100%" alt="" />
+
+<!-- ══════════════════════════════ 3D CONTRIBUTIONS ══════════════════════════════ -->
+
+<h2 align="center">🧊 3D Contribution Graph</h2>
+
+<div align="center">
+
+<!-- Appears after the profile-3d workflow runs once (Actions → GitHub-Profile-3D-Contrib → Run workflow) -->
+<img src="profile-3d-contrib/profile-night-rainbow.svg" width="100%" alt="3D contribution graph" />
+
+</div>
+
+<img src="assets/divider.svg" width="100%" alt="" />
 
 <!-- ══════════════════════════════ TECH ARSENAL ══════════════════════════════ -->
 
 <h2 align="center">🧰 Tech Arsenal</h2>
-
-<br/>
 
 <div align="center">
 
@@ -162,13 +202,11 @@ class SumitKumarBiswal:
 </tr>
 </table>
 
----
+<img src="assets/divider.svg" width="100%" alt="" />
 
 <!-- ══════════════════════════════ PROJECTS ══════════════════════════════ -->
 
 <h2 align="center">🚀 Featured Projects</h2>
-
-<br/>
 
 <table>
 <tr>
@@ -176,9 +214,9 @@ class SumitKumarBiswal:
 
 <h3>🌦️ Weather Forecasting</h3>
 
-<p><strong>The idea:</strong> one forecast is a guess — an ensemble is evidence.</p>
+<p><strong>The idea:</strong> one forecast is a guess; an ensemble is evidence.</p>
 
-<p>This desktop app queries <strong>four independent forecast models</strong> in parallel — ECMWF IFS, ECMWF AIFS, GFS, and ICON — then reports the <strong>median with a confidence spread</strong> instead of a single number.</p>
+<p>This desktop app queries <strong>four independent forecast models</strong> in parallel (ECMWF IFS, ECMWF AIFS, GFS, and ICON), then reports the <strong>median with a confidence spread</strong> instead of a single number.</p>
 
 <p><strong>What makes it different:</strong> it grades its own accuracy against observed conditions and benchmarks against <strong>persistence</strong> and <strong>IFS</strong> baselines, so you can see exactly when the ensemble is worth trusting.</p>
 
@@ -186,7 +224,6 @@ class SumitKumarBiswal:
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
 <img src="https://img.shields.io/badge/PySide6-41CD52?style=flat-square&logo=qt&logoColor=white" alt="PySide6" />
 <img src="https://img.shields.io/badge/Open--Meteo-0ea5e9?style=flat-square&logo=icloud&logoColor=white" alt="Open-Meteo" />
-<img src="https://img.shields.io/badge/Folium-77B829?style=flat-square&logo=leaflet&logoColor=white" alt="Folium" />
 </p>
 
 <a href="https://github.com/sonubiswal/Weather-Forecasting">
@@ -206,8 +243,6 @@ class SumitKumarBiswal:
 </tr>
 </table>
 
-<br/>
-
 <table>
 <tr>
 <td width="45%" valign="top" align="center">
@@ -225,7 +260,7 @@ class SumitKumarBiswal:
 
 <p><strong>The idea:</strong> range anxiety is a data problem, not a car problem.</p>
 
-<p>Enter a location in India and get the <strong>nearest EV charging station with a real driving route</strong> drawn on an interactive map — not a straight line, an actual road network path.</p>
+<p>Enter a location in India and get the <strong>nearest EV charging station with a real driving route</strong> drawn on an interactive map: not a straight line, an actual road-network path.</p>
 
 <p><strong>What's inside:</strong> a modern <strong>3D landing page</strong>, a <strong>live demo</strong>, and a Python backend that geocodes, routes, and renders <strong>standalone HTML maps</strong> you can open or share anywhere.</p>
 
@@ -248,8 +283,6 @@ class SumitKumarBiswal:
 </tr>
 </table>
 
-<br/>
-
 <table>
 <tr>
 <td width="55%" valign="top">
@@ -258,7 +291,7 @@ class SumitKumarBiswal:
 
 <p><strong>The idea:</strong> you can't run experiments on an aquifer.</p>
 
-<p>This project applies <strong>offline reinforcement learning</strong> to groundwater monitoring and audit tasks — learning and evaluating policies purely from <strong>historical data</strong>, with no online interaction with the environment.</p>
+<p>This project applies <strong>offline reinforcement learning</strong> to groundwater monitoring and audit tasks, learning and evaluating policies purely from <strong>historical data</strong>, with no online interaction with the environment.</p>
 
 <p><strong>Why it matters:</strong> it turns logged records into decision-making policy, which is exactly the constraint real environmental monitoring operates under.</p>
 
@@ -285,13 +318,11 @@ class SumitKumarBiswal:
 </tr>
 </table>
 
----
+<img src="assets/divider.svg" width="100%" alt="" />
 
 <!-- ══════════════════════════════ COURSEWORK ══════════════════════════════ -->
 
 <h2 align="center">🎓 Learning &amp; Coursework</h2>
-
-<br/>
 
 <table>
 <tr>
@@ -299,7 +330,7 @@ class SumitKumarBiswal:
 
 <h3>🤖 <a href="https://github.com/sonubiswal/CS50-AI-Work">CS50 AI</a></h3>
 
-<p>All <strong>12 CS50 AI projects</strong> complete — search algorithms, knowledge representation, uncertainty, optimization, learning, neural networks, and natural language processing.</p>
+<p>All <strong>12 CS50 AI projects</strong> complete: search algorithms, knowledge representation, uncertainty, optimization, learning, neural networks, and natural language processing.</p>
 
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
 <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white" alt="TensorFlow" />
@@ -313,7 +344,7 @@ class SumitKumarBiswal:
 
 <h3>🎯 <a href="https://github.com/sonubiswal/deep-learning-c1-neural-networks-and-deep-learning">Deep Learning Specialization</a></h3>
 
-<p>Neural networks and deep learning <strong>from scratch</strong> — backpropagation, regularization, and optimization, plus practical implementations from the DeepLearning.AI Specialization.</p>
+<p>Neural networks and deep learning <strong>from scratch</strong>: backpropagation, regularization, and optimization, plus practical implementations from the DeepLearning.AI Specialization.</p>
 
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
 <img src="https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" />
@@ -326,7 +357,7 @@ class SumitKumarBiswal:
 
 <h3>📘 <a href="https://github.com/sonubiswal/CS50x-Work">CS50x</a></h3>
 
-<p>Complete CS50x coursework — C and memory management, Python, SQL, and Flask — capped by a full-stack final project: <strong>StudyTrack</strong>, a study session tracker.</p>
+<p>Complete CS50x coursework (C and memory management, Python, SQL, and Flask), capped by a full-stack final project: <strong>StudyTrack</strong>, a study session tracker.</p>
 
 <img src="https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black" alt="C" />
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
@@ -339,7 +370,7 @@ class SumitKumarBiswal:
 
 <h3>👁️ <a href="https://github.com/sonubiswal/yolo-object-detection">YOLO Object Detection</a></h3>
 
-<p>A real-time object detection pipeline built on YOLO — covering the full loop of training, inference, and evaluation workflows.</p>
+<p>A real-time object detection pipeline built on YOLO, covering the full loop of training, inference, and evaluation workflows.</p>
 
 <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
 <img src="https://img.shields.io/badge/YOLO-00FFFF?style=flat-square&logo=yolo&logoColor=black" alt="YOLO" />
@@ -350,13 +381,11 @@ class SumitKumarBiswal:
 </tr>
 </table>
 
----
+<img src="assets/divider.svg" width="100%" alt="" />
 
 <!-- ══════════════════════════════ ANALYTICS ══════════════════════════════ -->
 
 <h2 align="center">📊 GitHub Analytics</h2>
-
-<br/>
 
 <div align="center">
 
@@ -378,6 +407,10 @@ class SumitKumarBiswal:
 
 <br/><br/>
 
+<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=sonubiswal&theme=react-dark&hide_border=true&area=true&bg_color=0d1117&color=38bdf8&line=6366f1&point=a78bfa" alt="Contribution activity graph" />
+
+<br/><br/>
+
 <img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=sonubiswal&theme=github_dark" alt="Profile details" />
 
 <br/>
@@ -386,9 +419,15 @@ class SumitKumarBiswal:
 <img width="32%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=sonubiswal&theme=github_dark" alt="Most commit language" />
 <img width="32%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=sonubiswal&theme=github_dark&utcOffset=5.5" alt="Productive time" />
 
+<br/><br/>
+
+<h3>🏆 Trophies</h3>
+
+<img width="100%" src="https://github-profile-trophy.vercel.app/?username=sonubiswal&theme=onedark&no-frame=true&no-bg=true&margin-w=10&column=7" alt="GitHub trophies" />
+
 </div>
 
----
+<img src="assets/divider.svg" width="100%" alt="" />
 
 <!-- ══════════════════════════════ SNAKE ══════════════════════════════ -->
 
@@ -407,19 +446,13 @@ class SumitKumarBiswal:
 
 </div>
 
-<br/>
-
-> **Setup already done.** The workflow at `.github/workflows/snake.yml` publishes fresh SVGs every 12 hours.
-
 </details>
 
----
+<img src="assets/divider.svg" width="100%" alt="" />
 
 <!-- ══════════════════════════════ FOCUS ══════════════════════════════ -->
 
 <h2 align="center">🎯 What I'm Working On</h2>
-
-<br/>
 
 <div align="center">
 
@@ -432,18 +465,16 @@ class SumitKumarBiswal:
 
 </div>
 
----
+<img src="assets/divider.svg" width="100%" alt="" />
 
 <!-- ══════════════════════════════ CONNECT ══════════════════════════════ -->
 
 <h2 align="center">🤝 Let's Connect</h2>
 
-<br/>
-
 <div align="center">
 
 <p>Interested in forecasting, geospatial tooling, or applied ML?<br/>
-Open an issue, star a repo, or reach out — I'm happy to talk shop.</p>
+Open an issue, star a repo, or reach out. I'm happy to talk shop.</p>
 
 <a href="https://github.com/sonubiswal">
   <img src="https://img.shields.io/badge/GitHub-sonubiswal-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
@@ -466,10 +497,10 @@ Open an issue, star a repo, or reach out — I'm happy to talk shop.</p>
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=14&pause=1400&color=64748B&center=true&vCenter=true&width=560&height=40&lines=Thanks+for+stopping+by+%E2%80%94+star+a+repo+if+it+helped!;Building+one+project+at+a+time." alt="Thanks for visiting" />
 </a>
 
-</div>
-
 <br/>
 
-<div align="center">
-  <sub>Made with Python, curiosity, and a lot of coffee.</sub>
+<img src="assets/divider.svg" width="100%" alt="" />
+
+<sub>Made with Python, curiosity, and a lot of coffee.</sub>
+
 </div>
