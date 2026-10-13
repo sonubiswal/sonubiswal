@@ -21,7 +21,7 @@
 
 <a href="https://github.com/sonubiswal?tab=followers"><img src="https://img.shields.io/github/followers/sonubiswal?label=Followers&style=for-the-badge&color=0ea5e9&labelColor=1e293b&logo=github&logoColor=white" alt="Followers" /></a>
 <a href="https://github.com/sonubiswal?tab=repositories"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fsonubiswal&query=%24.public_repos&label=Repos&color=6366f1&labelColor=1e293b&style=for-the-badge&logo=github&logoColor=white" alt="Repos" /></a>
-<img src="https://komarev.com/ghpvc/?username=sonubiswal&label=Profile%20Views&color=8b5cf6&style=for-the-badge&labelColor=1e293b" alt="Profile views" />
+<img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fsonubiswal&label=Profile%20Views&countColor=%238b5cf6&labelColor=%231e293b&style=for-the-badge" alt="Profile views" />
 <img src="https://img.shields.io/badge/Based%20in-India-22c55e?style=for-the-badge&labelColor=1e293b&logo=googlemaps&logoColor=white" alt="India" />
 <img src="https://img.shields.io/badge/Open%20to-Collaboration-f59e0b?style=for-the-badge&labelColor=1e293b&logo=handshake&logoColor=white" alt="Open to collaboration" />
 
