@@ -7,48 +7,51 @@
 ║                                                                              ║
 ║   All widgets generate live from the username "sonubiswal".                  ║
 ║   No API keys, no secrets, no setup.                                         ║
-║                                                                              ║
-║   The contribution snake needs a one-time GitHub Action — see the            ║
-║   collapsible section near the bottom for the workflow file.                 ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 -->
 
 <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
 
-<div align="center">
+<table>
+<tr>
+<td width="200" align="center" valign="middle">
 
 <a href="https://github.com/sonubiswal">
-  <img src="https://github.com/sonubiswal.png" width="120" style="border-radius: 50%;" alt="Sumit Kumar Biswal" />
+  <img src="https://github.com/sonubiswal.png" width="170" style="border-radius: 50%; border: 4px solid #0ea5e9;" alt="Sumit Kumar Biswal" />
 </a>
 
 <br/>
-
-<h1>Sumit Kumar Biswal</h1>
-
-<h4>AI &amp; Automation Engineer in Training</h4>
-
-<p><em>From multi-model weather forecasting to EV charging route finders —<br/>
-I build practical tools that solve real problems.</em></p>
-
-<a href="https://github.com/sonubiswal">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&pause=1200&color=38BDF8&center=true&vCenter=true&width=600&height=40&lines=Forecasting+%E2%80%A2+Geospatial+%E2%80%A2+Deep+Learning;Build+it.+Measure+it.+Beat+the+baseline." alt="Focus areas" />
-</a>
-
 <br/>
 
 <a href="https://github.com/sonubiswal?tab=followers">
-  <img src="https://img.shields.io/github/followers/sonubiswal?label=Followers&style=for-the-badge&color=0ea5e9&labelColor=1e293b&logo=github&logoColor=white" alt="Followers" />
+  <img src="https://img.shields.io/github/followers/sonubiswal?label=Followers&style=flat-square&color=0ea5e9&labelColor=1e293b&logo=github&logoColor=white" alt="Followers" />
 </a>
 <a href="https://github.com/sonubiswal?tab=repositories">
-  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fsonubiswal&query=%24.public_repos&label=Repositories&color=6366f1&labelColor=1e293b&style=for-the-badge&logo=github&logoColor=white" alt="Repositories" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fsonubiswal&query=%24.public_repos&label=Repos&color=6366f1&labelColor=1e293b&style=flat-square&logo=github&logoColor=white" alt="Repos" />
 </a>
-<img src="https://komarev.com/ghpvc/?username=sonubiswal&label=Profile%20Views&color=8b5cf6&style=for-the-badge" alt="Profile views" />
-<img src="https://img.shields.io/badge/Based%20in-India-22c55e?style=for-the-badge&labelColor=1e293b&logo=googlemaps&logoColor=white" alt="India" />
-<img src="https://img.shields.io/badge/Open%20to-Collaboration-f59e0b?style=for-the-badge&labelColor=1e293b&logo=handshake&logoColor=white" alt="Open to collaboration" />
 
-</div>
+</td>
+<td valign="middle">
+
+<h3>👋 Hi, I'm Sumit Kumar Biswal</h3>
+
+<p><strong>AI &amp; Automation Engineer in Training</strong><br/>
+<em>From multi-model weather forecasting to EV charging route finders — I build practical tools that solve real problems.</em></p>
+
+<a href="https://github.com/sonubiswal">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=16&pause=1200&color=38BDF8&vCenter=true&width=520&height=32&lines=Forecasting+%E2%80%A2+Geospatial+%E2%80%A2+Deep+Learning;Build+it.+Measure+it.+Beat+the+baseline." alt="Focus areas" />
+</a>
 
 <br/>
+<br/>
+
+<img src="https://komarev.com/ghpvc/?username=sonubiswal&label=Profile%20Views&color=8b5cf6&style=flat-square" alt="Profile views" />
+<img src="https://img.shields.io/badge/Based%20in-India-22c55e?style=flat-square&labelColor=1e293b&logo=googlemaps&logoColor=white" alt="India" />
+<img src="https://img.shields.io/badge/Open%20to-Collaboration-f59e0b?style=flat-square&labelColor=1e293b&logo=handshake&logoColor=white" alt="Open to collaboration" />
+
+</td>
+</tr>
+</table>
 
 ---
 
