@@ -23,7 +23,7 @@
 
 <a href="https://github.com/sonubiswal?tab=followers"><img src="https://img.shields.io/github/followers/sonubiswal?label=Followers&style=flat-square&color=0ea5e9&labelColor=1e293b" alt="Followers" /></a>
 <a href="https://github.com/sonubiswal?tab=repositories"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Fsonubiswal&query=%24.public_repos&label=Repositories&color=6366f1&labelColor=1e293b&style=flat-square" alt="Repositories" /></a>
-<img src="https://komarev.com/ghpvc/?username=sonubiswal&label=Profile%20Views&color=8b5cf6&style=flat-square&labelColor=1e293b" alt="Profile views" />
+<img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fsonubiswal&label=Profile%20Views&countColor=%238b5cf6&labelColor=%231e293b&style=flat-square" alt="Profile views" />
 <img src="https://img.shields.io/badge/Open%20to-Collaboration-22c55e?style=flat-square&labelColor=1e293b" alt="Open to collaboration" />
 
 <br/><br/>
