@@ -2,30 +2,75 @@ name: Update time-of-day banner
 
 on:
   schedule:
-    # GitHub cron runs in UTC. Each line is an IST (UTC+5:30) switch time.
-    - cron: "0 23 * * *"    # 04:30 IST -> dawn
-    - cron: "0 1 * * *"     # 06:30 IST -> sunrise
-    - cron: "0 4 * * *"     # 09:30 IST -> morning
-    - cron: "30 6 * * *"    # 12:00 IST -> noon
-    - cron: "30 9 * * *"    # 15:00 IST -> afternoon
-    - cron: "30 11 * * *"   # 17:00 IST -> sunset
-    - cron: "0 13 * * *"    # 18:30 IST -> dusk
-    - cron: "0 14 * * *"    # 19:30 IST -> night
-    - cron: "0 18 * * *"    # 23:30 IST -> midnight
-  workflow_dispatch:         # run it by hand from the Actions tab
+    # Each IST "switch" has TWO cron entries to dodge top-of-hour UTC drops.
+    # Strategy: fire 2 minutes (primary) and 5 minutes (backup) AFTER each
+    # IST boundary, using UTC times that are NOT on the minutes 00 or 30.
+    # The job is idempotent (pure function of `TZ=Asia/Kolkata date`), so
+    # the backup is a safe no-op when the primary already succeeded.
+    #
+    # Convert: IST -> UTC by subtracting 5h30m.
+    #   dawn      04:30 -> 23:00 -> "02 23 * * *"  / "05 23 * * *"
+    #   sunrise   06:30 -> 01:00 -> "02  1 * * *"  / "05  1 * * *"
+    #   morning   09:30 -> 04:00 -> "02  4 * * *"  / "05  4 * * *"
+    #   noon      12:00 -> 06:30 -> "32  6 * * *"  / "35  6 * * *"
+    #   afternoon 15:00 -> 09:30 -> "32  9 * * *"  / "35  9 * * *"
+    #   sunset    17:00 -> 11:30 -> "32 11 * * *"  / "35 11 * * *"
+    #   dusk      18:30 -> 13:00 -> "02 13 * * *"  / "05 13 * * *"
+    #   night     19:30 -> 14:00 -> "02 14 * * *"  / "05 14 * * *"
+    #   midnight  23:30 -> 18:00 -> "02 18 * * *"  / "05 18 * * *"
+    - cron: "2 23 * * *"
+    - cron: "5 23 * * *"
+    - cron: "2 1 * * *"
+    - cron: "5 1 * * *"
+    - cron: "2 4 * * *"
+    - cron: "5 4 * * *"
+    - cron: "32 6 * * *"
+    - cron: "35 6 * * *"
+    - cron: "32 9 * * *"
+    - cron: "35 9 * * *"
+    - cron: "32 11 * * *"
+    - cron: "35 11 * * *"
+    - cron: "2 13 * * *"
+    - cron: "5 13 * * *"
+    - cron: "2 14 * * *"
+    - cron: "5 14 * * *"
+    - cron: "2 18 * * *"
+    - cron: "5 18 * * *"
+  workflow_dispatch:
+
+# Auto-disable notice: a scheduled workflow on a public repo is disabled
+# after 60 days of repo inactivity (GitHub docs). If Actions go silent,
+# visit the Actions tab, re-enable, and either commit to the default branch
+# or trigger `workflow_dispatch` once to "tick" the activity counter.
 
 permissions:
   contents: write
 
+# Workflow-level concurrency: if a scheduled run and a manual dispatch
+# overlap, the queueing run will wait (not cancel) for the in-flight one.
+concurrency:
+  group: banner-time-of-day
+  cancel-in-progress: false
+
 jobs:
   banner:
+    name: Pick IST banner, rewrite README, commit
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout default branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Pick the banner for the current IST time
+      - name: Pick banner for current IST time
         run: |
-          now=$((10#$(TZ=Asia/Kolkata date +%H%M)))
+          set -euo pipefail
+
+          now=$(TZ=Asia/Kolkata date +%H%M)
+          now=$((10#$now))
+
+          theme=midnight
           if   [ $now -ge 430  ] && [ $now -lt 630  ]; then theme=dawn
           elif [ $now -ge 630  ] && [ $now -lt 930  ]; then theme=sunrise
           elif [ $now -ge 930  ] && [ $now -lt 1200 ]; then theme=morning
@@ -34,30 +79,67 @@ jobs:
           elif [ $now -ge 1700 ] && [ $now -lt 1830 ]; then theme=sunset
           elif [ $now -ge 1830 ] && [ $now -lt 1930 ]; then theme=dusk
           elif [ $now -ge 1930 ] && [ $now -lt 2330 ]; then theme=night
-          else theme=midnight
           fi
-          echo "IST time $now -> $theme"
-          cp "assets/banners/$theme.svg" assets/header.svg
-          echo "THEME=$theme" >> "$GITHUB_ENV"
 
-      - name: Bust the image cache when the banner changed
-        run: |
-          if git diff --quiet -- assets/header.svg; then
-            echo "Banner unchanged; keeping the current ?v= value."
-          else
-            V=$(date +%s)
-            sed -i -E "s|src=\"assets/header\.svg(\?v=[0-9]+)?\"|src=\"assets/header.svg?v=${V}\"|" README.md
-            echo "Cache-buster set to ?v=${V}"
+          src="assets/banners/${theme}.svg"
+          if [ ! -f "$src" ]; then
+            echo "::error title=Banner source missing::${src}"
+            echo "Available banners:"; ls -la assets/banners/ || true
+            exit 1
           fi
+
+          cp -f "$src" assets/header.svg
+          echo "IST ${now} -> theme=${theme}  (from ${src})"
+          {
+            echo "THEME=${theme}"
+            echo "IST=${now}"
+          } >> "$GITHUB_ENV"
+
+      - name: Bust the README image cache when banner changed
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- assets/header.svg; then
+            echo "Banner unchanged at IST ${IST}; cache-buster stays."
+            echo "BUST=no" >> "$GITHUB_ENV"
+            exit 0
+          fi
+
+          V=$(date +%s)
+          # Single pattern matches Markdown ![](path) AND HTML <img src="path">
+          # AND an existing ?v=<digits>. Re-applies uniformly so the README
+          # cache-buster is always present, not "added on first change".
+          sed -i -E \
+            -e "s|(assets/header\.svg)(\?v=[0-9]+)?|\1?v=${V}|g" \
+            README.md
+
+          echo "BUST=${V}" >> "$GITHUB_ENV"
+          echo "Cache-buster applied: ?v=${V}"
+          # Safety net: confirm README actually references the file.
+          grep -q 'assets/header\.svg' README.md
 
       - name: Commit only if something changed
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Conveyor belt: if a teammate pushed to default branch between our
+          # checkout and now, our push would be a non-fast-forward. Rebase.
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash \
+                 origin "${GITHUB_REF_NAME}"; then
+              break
+            fi
+            echo "Pull --rebase attempt ${attempt} failed; backing off ${attempt}s"
+            sleep $((attempt * 5))
+          done
+
           git add assets/header.svg README.md
+
           if git diff --cached --quiet; then
-            echo "Banner already up to date."
+            echo "Banner already up to date. No commit."
           else
-            git commit -m "chore: banner -> $THEME"
-            git push
+            git commit -m "chore: banner -> ${THEME} (IST ${IST}, v=${BUST})"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
