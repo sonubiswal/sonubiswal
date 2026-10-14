@@ -2,52 +2,110 @@ name: Update time-of-day banner
 
 on:
   schedule:
-    # GitHub cron runs in UTC. Each line is an IST (UTC+5:30) switch time.
-    - cron: "0 23 * * *"    # 04:30 IST -> dawn
-    - cron: "0 1 * * *"     # 06:30 IST -> sunrise
-    - cron: "0 4 * * *"     # 09:30 IST -> morning
-    - cron: "30 6 * * *"    # 12:00 IST -> noon
-    - cron: "30 9 * * *"    # 15:00 IST -> afternoon
-    - cron: "30 11 * * *"   # 17:00 IST -> sunset
-    - cron: "0 13 * * *"    # 18:30 IST -> dusk
-    - cron: "0 14 * * *"    # 19:30 IST -> night
-    - cron: "0 18 * * *"    # 23:30 IST -> midnight
-  workflow_dispatch:         # run it by hand from the Actions tab
+    # Every 15 minutes, offset to :07/:22/:37/:52 to stay clear of the
+    # congested :00/:15/:30/:45 slots where GitHub most often delays or drops
+    # scheduled runs. Idempotent, so a skipped run is fixed by the next one.
+    - cron: "7-59/15 * * * *"
+  push:
+    branches: [main]       # re-evaluate right after any push you make
+  workflow_dispatch:       # run it by hand from the Actions tab
 
 permissions:
-  contents: write
+  contents: write          # commit the banner
+  actions: write           # keep-alive: stops GitHub disabling the schedule after 60 idle days
+  issues: write            # open / close a "banner is failing" issue
+
+# Never run two at once; queue instead of cancelling a run that is mid-push.
+concurrency:
+  group: banner-time-of-day
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  GH_REPO: ${{ github.repository }}
 
 jobs:
   banner:
+    name: Pick IST banner and commit it
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Pick the banner for the current IST time
-        run: |
-          now=$((10#$(TZ=Asia/Kolkata date +%H%M)))
-          if   [ $now -ge 430  ] && [ $now -lt 630  ]; then theme=dawn
-          elif [ $now -ge 630  ] && [ $now -lt 930  ]; then theme=sunrise
-          elif [ $now -ge 930  ] && [ $now -lt 1200 ]; then theme=morning
-          elif [ $now -ge 1200 ] && [ $now -lt 1500 ]; then theme=noon
-          elif [ $now -ge 1500 ] && [ $now -lt 1700 ]; then theme=afternoon
-          elif [ $now -ge 1700 ] && [ $now -lt 1830 ]; then theme=sunset
-          elif [ $now -ge 1830 ] && [ $now -lt 1930 ]; then theme=dusk
-          elif [ $now -ge 1930 ] && [ $now -lt 2330 ]; then theme=night
-          else theme=midnight
-          fi
-          echo "IST time $now -> $theme"
-          cp "assets/banners/$theme.svg" assets/header.svg
-          echo "THEME=$theme" >> "$GITHUB_ENV"
+      - name: Self-test the schedule logic
+        run: bash .github/scripts/test-banner-logic.sh
 
-      - name: Commit only if the banner changed
+      - name: Apply the banner, commit, and push (with retries)
         run: |
-          git config user.name "github-actions[bot]"
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/header.svg
-          if git diff --cached --quiet; then
-            echo "Banner already up to date."
+          branch="${GITHUB_REF_NAME}"
+
+          for attempt in 1 2 3 4; do
+            # Always start from the latest remote state; the apply step is
+            # idempotent, so redoing it after a lost race is safe.
+            git fetch --quiet origin "$branch"
+            git reset --hard "origin/${branch}"
+
+            bash .github/scripts/apply-banner.sh
+            # shellcheck disable=SC1090
+            source "${RUNNER_TEMP}/banner.env"
+
+            git add assets/header.svg README.md
+            if git diff --cached --quiet; then
+              echo "Banner already up to date. Nothing to commit."
+              break
+            fi
+
+            git commit -m "chore: banner -> ${THEME} (IST ${IST})"
+            if git push origin "HEAD:${branch}"; then
+              echo "Pushed on attempt ${attempt}."
+              break
+            fi
+
+            if [ "$attempt" -eq 4 ]; then
+              echo "::error title=Push failed::could not push after ${attempt} attempts"
+              exit 1
+            fi
+            echo "Push attempt ${attempt} lost a race; retrying in $((attempt * 5))s"
+            sleep $((attempt * 5))
+          done
+
+          {
+            echo "### Banner"
+            echo ""
+            echo "| | |"
+            echo "|---|---|"
+            echo "| India time | \`${IST}\` |"
+            echo "| Scene | \`${THEME}\` |"
+            echo "| Changed this run | ${CHANGED} |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the schedule alive
+        continue-on-error: true
+        run: gh api --method PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/update-banner.yml/enable"
+
+      - name: Close the failure issue after a good run
+        if: success()
+        continue-on-error: true
+        run: |
+          for n in $(gh issue list --state open --label banner-workflow --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "Recovered: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          done
+
+      - name: Open an issue if the job failed
+        if: failure()
+        continue-on-error: true
+        run: |
+          run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          gh label create banner-workflow --color d93f0b --description "Time-of-day banner workflow" 2>/dev/null || true
+          existing="$(gh issue list --state open --label banner-workflow --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "Failed again: ${run_url}"
           else
-            git commit -m "chore: banner -> $THEME"
-            git push
+            gh issue create --label banner-workflow \
+              --title "Banner workflow is failing" \
+              --body "The time-of-day banner job failed. Run: ${run_url}"
           fi
