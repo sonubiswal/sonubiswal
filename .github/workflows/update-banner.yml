@@ -40,11 +40,21 @@ jobs:
           cp "assets/banners/$theme.svg" assets/header.svg
           echo "THEME=$theme" >> "$GITHUB_ENV"
 
-      - name: Commit only if the banner changed
+      - name: Bust the image cache when the banner changed
+        run: |
+          if git diff --quiet -- assets/header.svg; then
+            echo "Banner unchanged; keeping the current ?v= value."
+          else
+            V=$(date +%s)
+            sed -i -E "s|src=\"assets/header\.svg(\?v=[0-9]+)?\"|src=\"assets/header.svg?v=${V}\"|" README.md
+            echo "Cache-buster set to ?v=${V}"
+          fi
+
+      - name: Commit only if something changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/header.svg
+          git add assets/header.svg README.md
           if git diff --cached --quiet; then
             echo "Banner already up to date."
           else
