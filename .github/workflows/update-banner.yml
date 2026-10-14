@@ -1,0 +1,53 @@
+name: Update time-of-day banner
+
+on:
+  schedule:
+    # GitHub cron runs in UTC. Each line is an IST (UTC+5:30) switch time.
+    - cron: "0 23 * * *"    # 04:30 IST -> dawn
+    - cron: "0 1 * * *"     # 06:30 IST -> sunrise
+    - cron: "0 4 * * *"     # 09:30 IST -> morning
+    - cron: "30 6 * * *"    # 12:00 IST -> noon
+    - cron: "30 9 * * *"    # 15:00 IST -> afternoon
+    - cron: "30 11 * * *"   # 17:00 IST -> sunset
+    - cron: "0 13 * * *"    # 18:30 IST -> dusk
+    - cron: "0 14 * * *"    # 19:30 IST -> night
+    - cron: "0 18 * * *"    # 23:30 IST -> midnight
+  workflow_dispatch:         # run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  banner:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Pick the banner for the current IST time
+        run: |
+          now=$((10#$(TZ=Asia/Kolkata date +%H%M)))
+          if   [ $now -ge 430  ] && [ $now -lt 630  ]; then theme=dawn
+          elif [ $now -ge 630  ] && [ $now -lt 930  ]; then theme=sunrise
+          elif [ $now -ge 930  ] && [ $now -lt 1200 ]; then theme=morning
+          elif [ $now -ge 1200 ] && [ $now -lt 1500 ]; then theme=noon
+          elif [ $now -ge 1500 ] && [ $now -lt 1700 ]; then theme=afternoon
+          elif [ $now -ge 1700 ] && [ $now -lt 1830 ]; then theme=sunset
+          elif [ $now -ge 1830 ] && [ $now -lt 1930 ]; then theme=dusk
+          elif [ $now -ge 1930 ] && [ $now -lt 2330 ]; then theme=night
+          else theme=midnight
+          fi
+          echo "IST time $now -> $theme"
+          cp "assets/banners/$theme.svg" assets/header.svg
+          echo "THEME=$theme" >> "$GITHUB_ENV"
+
+      - name: Commit only if the banner changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/header.svg
+          if git diff --cached --quiet; then
+            echo "Banner already up to date."
+          else
+            git commit -m "chore: banner -> $THEME"
+            git push
+          fi

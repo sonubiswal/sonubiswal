@@ -3,8 +3,12 @@
   Repo name must be exactly: sonubiswal   (README.md at repo root)
 
   Files used by this README:
-    assets/header.svg                       animated 3D hero banner
+    assets/header.svg                       animated hero banner (swapped automatically by the time of day)
+    assets/banners/*.svg                    9 time-of-day variants: dawn, sunrise, morning, noon,
+                                            afternoon, sunset, dusk, night, midnight
+    assets/footer.svg                       animated wave footer
     assets/divider.svg                      animated section divider
+    .github/workflows/update-banner.yml     picks the banner for the current IST time
     .github/workflows/profile-3d.yml        generates the 3D contribution graph
     .github/workflows/snake.yml             (already set up) contribution snake
 -->
@@ -33,7 +37,12 @@
 <a href="#-featured-projects">Projects</a> &nbsp;•&nbsp;
 <a href="#-learning--coursework">Coursework</a> &nbsp;•&nbsp;
 <a href="#-github-analytics">Analytics</a> &nbsp;•&nbsp;
+<a href="#-the-banner-follows-the-sun">Banner</a> &nbsp;•&nbsp;
 <a href="#-lets-connect">Connect</a>
+
+<br/>
+
+<sub>🌅 The header above changes with the time of day in India. <a href="#-the-banner-follows-the-sun">See all 9 moods</a>.</sub>
 
 </div>
 
@@ -467,6 +476,46 @@ mindmap
 
 <img src="assets/divider.svg" width="100%" alt="" />
 
+<!-- ══════════════════════════════ BANNER FOLLOWS THE SUN ══════════════════════════════ -->
+
+<h2 align="center">🌗 The Banner Follows the Sun</h2>
+
+<div align="center">
+
+<p>The header at the top is not a fixed image. A small <strong>GitHub Action</strong> swaps it through <strong>9 hand-built scenes</strong> across the day, timed to <strong>India Standard Time</strong>.<br/>
+Visit at sunrise, noon, or past midnight and you'll see a different sky.</p>
+
+</div>
+
+<details>
+<summary><b>🖼️ See all 9 moods (click to expand)</b></summary>
+
+<br/>
+
+<table>
+<tr>
+<td width="33%" align="center"><img src="assets/banners/dawn.svg" width="100%" alt="Dawn banner" /><br/><sub><b>🌄 Dawn</b><br/>4:30 – 6:30 AM</sub></td>
+<td width="33%" align="center"><img src="assets/banners/sunrise.svg" width="100%" alt="Sunrise banner" /><br/><sub><b>🌅 Sunrise</b><br/>6:30 – 9:30 AM</sub></td>
+<td width="33%" align="center"><img src="assets/banners/morning.svg" width="100%" alt="Morning banner" /><br/><sub><b>🌤️ Morning</b><br/>9:30 AM – 12:00 PM</sub></td>
+</tr>
+<tr>
+<td align="center"><img src="assets/banners/noon.svg" width="100%" alt="Noon banner" /><br/><sub><b>☀️ Noon</b><br/>12:00 – 3:00 PM</sub></td>
+<td align="center"><img src="assets/banners/afternoon.svg" width="100%" alt="Afternoon banner" /><br/><sub><b>🌞 Afternoon</b><br/>3:00 – 5:00 PM</sub></td>
+<td align="center"><img src="assets/banners/sunset.svg" width="100%" alt="Sunset banner" /><br/><sub><b>🌇 Sunset</b><br/>5:00 – 6:30 PM</sub></td>
+</tr>
+<tr>
+<td align="center"><img src="assets/banners/dusk.svg" width="100%" alt="Dusk banner" /><br/><sub><b>🌆 Dusk</b><br/>6:30 – 7:30 PM</sub></td>
+<td align="center"><img src="assets/banners/night.svg" width="100%" alt="Night banner" /><br/><sub><b>🌙 Night</b><br/>7:30 – 11:30 PM</sub></td>
+<td align="center"><img src="assets/banners/midnight.svg" width="100%" alt="Midnight banner with aurora" /><br/><sub><b>🌌 Midnight</b><br/>11:30 PM – 4:30 AM</sub></td>
+</tr>
+</table>
+
+<p align="center"><sub>Every scene is a single hand-coded animated SVG (no images, no JavaScript): moving waves, drifting clouds, flying birds, twinkling stars, and shooting stars at night.</sub></p>
+
+</details>
+
+<img src="assets/divider.svg" width="100%" alt="" />
+
 <!-- ══════════════════════════════ CONNECT ══════════════════════════════ -->
 
 <h2 align="center">🤝 Let's Connect</h2>
@@ -499,8 +548,8 @@ Open an issue, star a repo, or reach out. I'm happy to talk shop.</p>
 
 <br/>
 
-<img src="assets/divider.svg" width="100%" alt="" />
-
 <sub>Made with Python, curiosity, and a lot of coffee.</sub>
 
 </div>
+
+<img src="assets/footer.svg" width="100%" alt="" />
