@@ -106,6 +106,18 @@ mindmap
 
 <br/>
 
+## Experience
+
+**AI/ML Intern** · National Aluminium Company Limited (NALCO)
+*Jun 2025 – Jul 2025 · Damanjodi, Odisha*
+- Engineered an edge-deployable YOLOv8 PPE detection system trained on 5,000+ industrial images, achieving 82% classification accuracy and reducing manual inspection overhead by ~30%.
+
+**Full-Stack Developer Intern** · GIET University
+*Jun 2024 – Jul 2024 · Gunpur, Odisha*
+- Built a full-stack Library Management System (Python/Flask, SQL) featuring book search, checkout, and admin/inventory controls with optimized queries.
+
+<br/>
+
 ## Featured Projects
 
 ### [SentinelVision](https://github.com/sonubiswal/sentinelvision)
@@ -160,6 +172,8 @@ Applies **offline reinforcement learning** to groundwater monitoring and audit t
 
 | Project | Summary |
 | :--- | :--- |
+| [**DeepSkin**](https://github.com/sonubiswal/deepskin-skin-cancer-detection) | 7-class skin lesion classification on HAM10000. Benchmarked Custom CNN, MobileNetV2, and DenseNet121. `TensorFlow` `Keras` `Streamlit` |
+| [**Nirmal — Digital Safai Mitra**](https://github.com/sonubiswal/nirmal-digital-safai-mitra) | Cross-platform Flutter & Firebase waste management app with live GPS tracking, bin locator, and smart complaints. `Flutter` `Firebase` `Google Maps` |
 | [**YOLO Object Detection**](https://github.com/sonubiswal/yolo-object-detection) | A real-time detection pipeline on YOLO, covering training, inference, and evaluation. `Python` `OpenCV` `PyTorch` |
 | [**StudyTrack**](https://github.com/sonubiswal/CS50x-Work) | Full-stack study session tracker, built as the CS50x final project. `Python` `Flask` `SQLite` `JavaScript` |
 
@@ -272,15 +286,12 @@ Interested in forecasting, geospatial tooling, or applied ML? Open an issue, sta
 <a href="https://github.com/sonubiswal">
   <img src="https://img.shields.io/badge/GitHub-sonubiswal-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
 </a>
-
-<!--
-  Replace "#" with real URLs and remove the surrounding comment markers
-  to activate any of the additional links below.
-
-<a href="#"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-<a href="#"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-<a href="#"><img src="https://img.shields.io/badge/Portfolio-0ea5e9?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio" /></a>
--->
+<a href="https://linkedin.com/in/sonubiswal">
+  <img src="https://img.shields.io/badge/LinkedIn-sonubiswal-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
+<a href="mailto:sonubiswal2008@gmail.com">
+  <img src="https://img.shields.io/badge/Email-sonubiswal2008@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+</a>
 
 <br/><br/>
 
